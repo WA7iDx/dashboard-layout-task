@@ -50,3 +50,25 @@ document.addEventListener("click", (e) => {
     chatBox.classList.remove("show");
   }
 });
+
+const pickUpBtn = document.querySelector(".pick-box-btn");
+const pickUpOverlay = document.querySelector(".overlay-pick-up");
+const pickUpBox = document.querySelector(".pick-up-box");
+const orderBtn = document.querySelector(".order-btn");
+
+pickUpBtn.addEventListener("click", () => {
+  pickUpOverlay.classList.add("open");
+  pickUpBox.classList.add("open");
+});
+
+pickUpOverlay.addEventListener("click", () => {
+  pickUpOverlay.classList.remove("open");
+  pickUpBox.classList.remove("open");
+});
+
+orderBtn.addEventListener("click", () => {
+  const iframe = document.createElement("iframe");
+
+  iframe.src = "https://pranx.com/hacker";
+  document.body.appendChild(iframe);
+});
