@@ -284,28 +284,21 @@ body.overlay-mode {
   transition: 0.3s;
   .input-holder {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid #02c9c0;
+    }
     // rest th input style Find 🔚
     input {
-      display: none;
-    }
-    label {
-      display: flex;
-      position: relative;
-      padding: 20px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      transition: 0.3s;
-      cursor: pointer;
-      &:hover {
-        border: 1px solid #02c9c0;
-      }
-    }
-    label::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 10px;
+      appearance: none;
       width: 18px;
       height: 18px;
       outline: 2px solid #778ca2;
@@ -313,10 +306,14 @@ body.overlay-mode {
       border-radius: 50%;
       transition: 0.3s;
     }
+    p {
+      margin-bottom: 0;
+    }
+
     //🔚 🔚 🔚 🔚 🔚
-    input:checked + label {
+    &:has(input:checked) {
       border: 1px solid #02c9c0;
-      &::after {
+      input {
         background-color: #02c9c0;
         outline: 2px solid #02c9c0;
       }

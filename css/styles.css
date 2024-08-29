@@ -274,12 +274,9 @@ body.overlay-mode.open .overlay-screen {
 }
 .pick-up-box .input-holder {
   margin-bottom: 10px;
-}
-.pick-up-box .input-holder input {
-  display: none;
-}
-.pick-up-box .input-holder label {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   padding: 20px;
   border: 1px solid #e0e0e0;
@@ -287,15 +284,11 @@ body.overlay-mode.open .overlay-screen {
   transition: 0.3s;
   cursor: pointer;
 }
-.pick-up-box .input-holder label:hover {
+.pick-up-box .input-holder:hover {
   border: 1px solid #02c9c0;
 }
-.pick-up-box .input-holder label::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
+.pick-up-box .input-holder input {
+  appearance: none;
   width: 18px;
   height: 18px;
   outline: 2px solid #778ca2;
@@ -303,10 +296,13 @@ body.overlay-mode.open .overlay-screen {
   border-radius: 50%;
   transition: 0.3s;
 }
-.pick-up-box .input-holder input:checked + label {
+.pick-up-box .input-holder p {
+  margin-bottom: 0;
+}
+.pick-up-box .input-holder:has(input:checked) {
   border: 1px solid #02c9c0;
 }
-.pick-up-box .input-holder input:checked + label::after {
+.pick-up-box .input-holder:has(input:checked) input {
   background-color: #02c9c0;
   outline: 2px solid #02c9c0;
 }
